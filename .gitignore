@@ -1,0 +1,8 @@
+.next
+node_modules
+out
+coverage
+public/sw.js
+public/workbox-*.js
+.DS_Store
+*.lognode_modules

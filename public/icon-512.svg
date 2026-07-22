@@ -1,0 +1,7 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="112" fill="#020617"/>
+  <rect x="52" y="52" width="408" height="408" rx="92" fill="#0F172A" stroke="#2DD4BF" stroke-opacity="0.28" stroke-width="2"/>
+  <circle cx="256" cy="216" r="82" fill="#2DD4BF" fill-opacity="0.18" stroke="#2DD4BF" stroke-opacity="0.45" stroke-width="3"/>
+  <path d="M156 340C184 302 218 284 256 284C294 284 328 302 356 340" stroke="#E2E8F0" stroke-width="18" stroke-linecap="round"/>
+  <text x="256" y="420" text-anchor="middle" fill="#E2E8F0" font-size="56" font-family="sans-serif" font-weight="700">Emil</text>
+</svg>
