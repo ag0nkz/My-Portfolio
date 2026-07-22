@@ -19,6 +19,8 @@ import {
   SquareArrowOutUpRight,
   X,
 } from 'lucide-react';
+import { AntigravityBackground } from '../components/antigravity-background';
+import { InstallPrompt } from '../components/install-prompt';
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -103,52 +105,55 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-0 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-teal-400/10 blur-3xl" />
-        <div className="absolute inset-0 section-grid opacity-30" />
-      </div>
-
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <Link href="#hero" className="group inline-flex items-center gap-2 text-lg font-semibold tracking-wide text-slate-50">
-            Emil Molina.
-            <span className="h-2 w-2 rounded-full bg-teal-400 shadow-[0_0_20px_rgba(45,212,191,0.8)]" />
-          </Link>
-
-          <nav className="hidden items-center gap-6 md:flex">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition hover:text-teal-300">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <button
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/80 text-slate-200 md:hidden"
-            aria-label="Toggle navigation"
-            onClick={() => setMenuOpen((value) => !value)}
-          >
-            {menuOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
+    <main className="relative min-h-screen bg-slate-950 text-slate-100">
+      <AntigravityBackground />
+      <InstallPrompt />
+      <div className="relative z-10">
+        <div className="fixed inset-0 -z-10 overflow-hidden">
+          <div className="absolute left-1/2 top-0 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-teal-400/10 blur-3xl" />
+          <div className="absolute inset-0 section-grid opacity-30" />
         </div>
 
-        {menuOpen ? (
-          <div className="border-t border-slate-800 bg-slate-950/95 px-4 py-4 md:hidden sm:px-6">
-            <div className="mx-auto flex max-w-6xl flex-col gap-3">
+        <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <Link href="#hero" className="group inline-flex items-center gap-2 text-lg font-semibold tracking-wide text-slate-50">
+              Emil Molina.
+              <span className="h-2 w-2 rounded-full bg-teal-400 shadow-[0_0_20px_rgba(45,212,191,0.8)]" />
+            </Link>
+
+            <nav className="hidden items-center gap-6 md:flex">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-sm text-slate-200">
+                <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition hover:text-teal-300">
                   {item.label}
                 </Link>
               ))}
-            </div>
-          </div>
-        ) : null}
-      </header>
+            </nav>
 
-      <section id="hero" className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/80 text-slate-200 md:hidden"
+              aria-label="Toggle navigation"
+              onClick={() => setMenuOpen((value) => !value)}
+            >
+              {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+
+          {menuOpen ? (
+            <div className="border-t border-slate-800 bg-slate-950/95 px-4 py-4 md:hidden sm:px-6">
+              <div className="mx-auto flex max-w-6xl flex-col gap-3">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-xl border border-slate-800 bg-slate-900/70 px-4 py-3 text-sm text-slate-200">
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </header>
+
+        <section id="hero" className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-8">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-teal-300">
               <BadgeCheck size={14} />
@@ -192,13 +197,12 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/80 p-4 shadow-glow">
               <div className="rounded-[1.5rem] border border-slate-800 bg-slate-950/70 p-4">
                 <Image
-                  src="/profile.jpg"
+                  src="/EFP02700.JPG"
                   alt="Emil Jonathan C. Molina"
                   width={720}
                   height={880}
                   priority
-                  unoptimized
-                  className="aspect-[4/5] w-full rounded-[1.25rem] object-cover object-center"
+                  className="aspect-[4/5] w-full rounded-[1.25rem] object-cover object-center ring-1 ring-teal-400/20 shadow-[0_18px_60px_rgba(2,6,23,0.65)]"
                 />
               </div>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -378,6 +382,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
     </main>
   );
 }

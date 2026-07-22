@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   applicationName: 'Emil Molina.',
   manifest: '/manifest.json',
   metadataBase: new URL('https://ag0nkz.github.io'),
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Emil Molina.',
+  },
   openGraph: {
     title: 'Emil Molina.',
     description: 'AI Engineer & Software Developer portfolio.',
@@ -30,6 +35,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  maximumScale: 1,
 };
 
 export default function RootLayout({
