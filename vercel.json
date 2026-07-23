@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/.next/serverless/$1"
+    }
+  ],
+  "env": {
+    "nodeVersion": "18"
+  },
+  "outputDirectory": ".next"
+}
