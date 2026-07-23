@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Emil Molina.',
-    description: 'AI Engineer & Software Developer portfolio.',
+    description: 'Aspiring AI Engineer & Software Developer portfolio.',
     type: 'website',
   },
 };

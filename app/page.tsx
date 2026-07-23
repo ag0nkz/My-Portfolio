@@ -15,6 +15,7 @@ import {
   MapPin,
   Menu,
   PanelTop,
+  Phone,
   Sparkles,
   SquareArrowOutUpRight,
   X,
@@ -77,23 +78,20 @@ const experiences = [
 
 const projects = [
   {
-    name: 'Synthia',
+    name: 'Synthia (AI-Powered Mobile & PWA)',
     description:
-      'Intelligent PWA leveraging LLMs and multi-agent AI frameworks for automated meeting documentation and management.',
-    tags: ['Next.js App Router', 'TypeScript', 'AI / LLM Agents', 'next-pwa'],
+      'Intelligent cross-platform PWA and mobile application leveraging LLMs and multi-agent AI frameworks for automated meeting documentation, real-time transcription, and workflow management.',
+    tags: ['Next.js App Router', 'React Native', 'TypeScript', 'AI / LLM Agents', 'next-pwa'],
+    github: 'https://github.com/ag0nkz/Synthia-Finale',
   },
   {
-    name: 'Construction Inventory & Accounting System',
+    name: 'Warehouse Inventory System',
     description:
-      'Web-based operational system co-developed during OJT to manage enterprise construction assets, stock tracking, and financial logs.',
+      'Web-based inventory system co-developed during OJT to manage stock tracking and operational logs.',
     tags: ['React Native', 'Node.js', 'SQL', 'Tailwind CSS'],
+    github: 'https://github.com/ag0nkz/GNNETS-Inventory-System',
   },
-  {
-    name: 'Cross-Platform Mobile Apps',
-    description:
-      'Custom mobile applications focusing on smooth UI performance, state management, and API integrations.',
-    tags: ['React Native', 'TypeScript', 'Node.js'],
-  },
+
 ];
 
 const education = [
@@ -157,7 +155,7 @@ export default function Home() {
           <div className="space-y-8">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-teal-300">
               <BadgeCheck size={14} />
-              AI Engineer & Software Developer
+              Aspiring AI Engineer & Software Developer
             </span>
             <div className="space-y-5">
               <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl lg:text-7xl">
@@ -307,12 +305,12 @@ export default function Home() {
             <h2 className="mt-3 font-display text-3xl font-semibold text-slate-50 sm:text-4xl">Selected work across AI, mobile, and systems.</h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2">
             {projects.map((project) => (
               <article key={project.name} className="flex h-full flex-col rounded-[1.75rem] border border-slate-800 bg-slate-900/70 p-6 shadow-glow">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-slate-50">{project.name}</h3>
-                  <Link href="https://github.com/ag0nkz" target="_blank" rel="noreferrer" className="rounded-full border border-slate-700 p-2 text-teal-300 transition hover:border-teal-400 hover:bg-teal-400/10">
+                  <Link href={project.github} target="_blank" rel="noreferrer" className="rounded-full border border-slate-700 p-2 text-teal-300 transition hover:border-teal-400 hover:bg-teal-400/10">
                     <SquareArrowOutUpRight size={16} />
                   </Link>
                 </div>
@@ -325,7 +323,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="mt-auto pt-6">
-                  <Link href="https://github.com/ag0nkz" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-300 transition hover:text-teal-200">
+                  <Link href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-teal-300 transition hover:text-teal-200">
                     View on GitHub
                     <ArrowUpRight size={16} />
                   </Link>
@@ -360,8 +358,8 @@ export default function Home() {
 
       <section id="contact" className="px-4 py-12 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-[2rem] border border-teal-400/20 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-glow sm:p-8">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
+          <div className="flex flex-col items-center space-y-8">
+            <div className="text-center">
               <p className="text-sm uppercase tracking-[0.24em] text-teal-300">Contact</p>
               <h2 className="mt-3 font-display text-3xl font-semibold text-slate-50 sm:text-4xl">Let&apos;s Connect</h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300">
@@ -369,10 +367,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 text-sm text-slate-200">
+            <div className="flex flex-col items-center justify-center gap-3 text-sm text-slate-200 sm:flex-row">
               <a href="mailto:molina.emiljonathan.c@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-5 py-3 transition hover:border-teal-400 hover:text-teal-300">
                 <Mail size={16} />
                 molina.emiljonathan.c@gmail.com
+              </a>
+              <a href="tel:+09928616799" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-5 py-3 transition hover:border-teal-400 hover:text-teal-300">
+                <Phone size={16} />
+                +09928616799
               </a>
               <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-5 py-3 text-slate-300">
                 <MapPin size={16} />

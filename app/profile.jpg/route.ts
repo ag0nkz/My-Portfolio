@@ -9,7 +9,7 @@ export function GET() {
       <rect x="410" y="870" width="380" height="18" rx="9" fill="#E2E8F0"/>
       <rect x="470" y="920" width="260" height="12" rx="6" fill="#94A3B8"/>
       <text x="600" y="1080" text-anchor="middle" fill="#E2E8F0" font-size="72" font-family="sans-serif" font-weight="700">Emil Molina.</text>
-      <text x="600" y="1150" text-anchor="middle" fill="#94A3B8" font-size="30" font-family="sans-serif">AI Engineer &amp; Software Developer</text>
+      <text x="600" y="1150" text-anchor="middle" fill="#94A3B8" font-size="30" font-family="sans-serif">Aspiring AI Engineer &amp; Software Developer</text>
     </svg>
   `;
 
