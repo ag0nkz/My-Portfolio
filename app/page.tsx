@@ -9,6 +9,7 @@ import {
   BriefcaseBusiness,
   ChevronRight,
   Code2,
+  Download,
   Github,
   GraduationCap,
   Mail,
@@ -99,6 +100,37 @@ const education = [
   'Accountancy and Business Management (ABM) — APEC Schools (2016 – 2018)',
 ];
 
+const certificates = [
+  {
+    title: 'GNnets Construction Corp. — OJT Training Certificate',
+    issuer: 'GNnets Construction Corp.',
+    period: 'Feb 2026 – Apr 2026',
+    hours: '243 hours completed',
+    image: '/gnnets.jpg',
+  },
+  {
+    title: 'Boltimizer Corp. — OJT Certificate',
+    issuer: 'Boltimizer Corp.',
+    period: 'Sep 2025 – Nov 2025',
+    hours: '243 hours completed',
+    image: '/9.jpg',
+  },
+  {
+    title: 'SANS Institute — Emerging Technologies Track',
+    issuer: 'Fall Cyber Solutions',
+    period: 'Fall 2025',
+    hours: 'Certification',
+    image: '/certification.pdf.png',
+  },
+  {
+    title: 'Certificate of Attendance — Intro to Cybersecurity and Network Security',
+    issuer: 'DICT',
+    period: 'INFOSESSION',
+    hours: '4-hour info session',
+    image: '/dict-certificate.jpg',
+  },
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -172,6 +204,10 @@ export default function Home() {
                 GitHub Profile
                 <ArrowUpRight size={16} />
               </Link>
+              <a href="/CV_MOLINA_EMIL_JONATHAN.pdf" download="CV_MOLINA_EMIL_JONATHAN.pdf" className="inline-flex items-center justify-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-6 py-3 text-sm font-semibold text-teal-300 transition hover:bg-teal-400/20 hover:border-teal-400/50">
+                <Download size={16} />
+                Download CV
+              </a>
               <Link href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-teal-400/60 hover:text-teal-300">
                 Contact
                 <ChevronRight size={16} />
@@ -356,7 +392,40 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-4 py-12 pb-24 sm:px-6 lg:px-8">
+       <section id="certificates" className="px-4 py-12 sm:px-6 lg:px-8">
+         <div className="mx-auto max-w-6xl space-y-8">
+           <div>
+             <p className="text-sm uppercase tracking-[0.24em] text-teal-300">Certificates</p>
+             <h2 className="mt-3 font-display text-3xl font-semibold text-slate-50 sm:text-4xl">Credentials and certifications.</h2>
+           </div>
+
+           <div className="space-y-6">
+             {certificates.map((cert) => (
+               <article key={cert.title} className="flex flex-col gap-4 rounded-[1.75rem] border border-slate-800 bg-slate-900/70 p-6 shadow-glow sm:flex-row sm:items-center sm:gap-6">
+                <div className="shrink-0 overflow-hidden rounded-xl border border-slate-700 bg-slate-950/50 p-2 sm:max-w-sm">
+                  <Image
+                    src={cert.image}
+                    alt={cert.title}
+                    width={700}
+                    height={500}
+                    className="h-auto w-full rounded-lg object-contain"
+                  />
+                </div>
+                 <div className="space-y-1">
+                   <h3 className="text-lg font-semibold text-slate-50">{cert.title}</h3>
+                   <p className="text-sm text-slate-300">{cert.issuer}</p>
+                   <p className="text-sm text-slate-400">{cert.period}</p>
+                   {cert.hours ? (
+                     <p className="text-sm text-teal-300">{cert.hours}</p>
+                   ) : null}
+                 </div>
+               </article>
+             ))}
+           </div>
+         </div>
+       </section>
+
+        <section id="contact" className="px-4 py-12 pb-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl rounded-[2rem] border border-teal-400/20 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 shadow-glow sm:p-8">
           <div className="flex flex-col items-center space-y-8">
             <div className="text-center">
@@ -368,6 +437,10 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center gap-3 text-sm text-slate-200 sm:flex-row">
+              <a href="/CV_MOLINA_EMIL_JONATHAN.pdf" download="CV_MOLINA_EMIL_JONATHAN.pdf" className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-5 py-3 transition hover:bg-teal-400/20 hover:border-teal-400/50">
+                <Download size={16} />
+                Download CV
+              </a>
               <a href="mailto:molina.emiljonathan.c@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-5 py-3 transition hover:border-teal-400 hover:text-teal-300">
                 <Mail size={16} />
                 molina.emiljonathan.c@gmail.com
