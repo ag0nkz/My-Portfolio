@@ -29,6 +29,7 @@ const navItems = [
   { href: '#tech-stack', label: 'Tech Stack' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
+  { href: '#certificates', label: 'Certificates' },
   { href: '#contact', label: 'Contact' },
 ];
 
